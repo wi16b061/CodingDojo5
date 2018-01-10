@@ -31,7 +31,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ItemsControl Grid.Column="1" ItemsSource="{Binding SelectedKategorie.GameList}">
+        <ItemsControl ItemsSource="{Binding SelectedKategorie.GameList}" Grid.ColumnSpan="2" Margin="310,6,0.2,158.4" Grid.RowSpan="2">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal"/>
@@ -47,13 +47,13 @@
                                 <Label FontSize="20" VerticalAlignment="Center" Content="{Binding Age}"/>
                             </StackPanel>
                             <Button Content="Buy" 
-                                        Command="{Binding Main.BuyBtnClickedCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                        Command="{Binding DataContext.BuyBtnClickedCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                         CommandParameter="{Binding}"
                                         Height="35" Width="190" HorizontalAlignment="Center" Margin="3"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
-            </ItemsControl.ItemTemplate>           
+            </ItemsControl.ItemTemplate>
         </ItemsControl>
         <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding CartList}">
             <ListBox.ItemsPanel>
